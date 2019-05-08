@@ -48,6 +48,7 @@ void loop() {
       message_old[i] = message[i];
     }
     printMessage();
+    sendMessage();
   }
 
 }
@@ -98,6 +99,11 @@ void loop()
 }
 */
 
+void sendMessage(){
+  radio.write(&message, sizeof(message));
+}
+
+
 void printMessage(){
   for(int i = 0; i < 6; i++){
     Serial.print(message[i]);//Sending the message to receiver
@@ -117,10 +123,7 @@ boolean updateMessage(){
 }
 
 
-
-
-void readButtons()
-{
+void readButtons(){
   for (int i = 0; i < NUM_BUTTONS; i++)
   {
     if (digitalRead(buttons[i]) == LOW)
