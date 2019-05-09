@@ -16,14 +16,14 @@ Thx!
 #include "SPI.h"
 #include "FastLED.h" // FastLED library for WS2812 RGB Stick http://fastled.io/
 
-#define NUM_LEDS 8 // Number of leds on stick
-#define LED_PIN 8 // Digital In (DI) of RGB Stick connected to pin 8 of the UNO
+#define NUM_LEDS 228 // Number of leds on stick
+#define LED_PIN 3 // Digital In (DI) of RGB Stick connected to pin 8 of the UNO
 
 CRGB leds[NUM_LEDS]; // FastLED Library Init
 
 int ReceivedMessage[1] = {000}; // Used to store value received by the NRF24L01
 
-RF24 radio(9,10); // NRF24L01 used SPI pins + Pin 9 and 10 on the UNO
+RF24 radio(7,8); // NRF24L01 used SPI pins + Pin 9 and 10 on the UNO
 
 const uint64_t pipe = 0xE6E6E6E6E6E6; // Needs to be the same for communicating between 2 NRF24L01
 
