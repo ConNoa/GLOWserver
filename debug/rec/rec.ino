@@ -6,6 +6,8 @@ void setup()
 {
   Serial.begin(9600);
   mySwitch.enableReceive(0);  // Empfänger ist an Interrupt-Pin "0" - Das ist am UNO der Pin2
+  Serial.print("setupfertig warte auf Code: ");
+
 }
 
 void loop() {
